@@ -3,7 +3,11 @@ import styled from 'styled-components'
 
 function Header(props) {
   return (
-    <Nav>Header</Nav>
+    <Nav>
+        <Logo>
+            <img src="/images/logo.svg" alt="Disney+" />
+        </Logo>
+    </Nav>
   )
 }
 
@@ -20,6 +24,20 @@ const Nav = styled.nav`
   padding: 0 36px;
   letter-spacing: 16px;
   z-index: 3;
+`;
+
+const Logo = styled.a`
+  padding: 0;
+  width: 80px;
+  margin-top: 4px;
+  max-height: 70px;
+  font-size: 0;
+  display: inline-block;
+
+  img {
+    display: block;
+    width: 100%;
+  };
 `;
 
 export default Header
