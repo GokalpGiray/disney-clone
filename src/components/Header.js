@@ -9,10 +9,33 @@ function Header(props) {
         </Logo>
         <NavMenu>
           <a href="/home">
-            <img src="/images/home-icon.svg" alt="HomeIcon" />
-            <span>Home</span>
+            <img src="/images/home-icon.svg" alt="HomeIcon" style={{marginTop: "-2px"}} />
+            <span>HOME</span>
+          </a>
+          <a href="/home">
+            <img src="/images/search-icon.svg" alt="searchIcon" />
+            <span>SEARCH</span>
+          </a>
+          <a href="/home">
+            <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
+            <span>WATCHLIST</span>
+          </a>
+          <a href="/home">
+            <img src="/images/original-icon.svg" alt="originalsIcon" style={{marginTop: "-2px"}} />
+            <span>ORIGINALS</span>
+          </a>
+          <a href="/home">
+            <img src="/images/movie-icon.svg" alt="moviesIcon" />
+            <span>MOVIES</span>
+          </a>
+          <a href="/home">
+            <img src="/images/series-icon.svg" alt="seriesIcon" style={{marginTop: "-4px"}} />
+            <span>SERIES</span>
           </a>
         </NavMenu>
+        <Login>
+          LOGIN
+        </Login>
     </Nav>
   )
 }
@@ -59,7 +82,7 @@ const NavMenu = styled.div`
   a {
     display: flex;
     align-items: center;
-    padding; 0 12px;
+    padding: 0 12px;
 
     img {
       height: 20px;
@@ -73,7 +96,7 @@ const NavMenu = styled.div`
       font-size: 13px;
       letter-spacing: 1.42px;
       line-height: 1.08;
-      padding: 2px 0px;
+      padding: 2px 0px 2px 5px;
       white-space: nowrap;
       position: relative;
 
@@ -106,6 +129,22 @@ const NavMenu = styled.div`
   
   @media (max-width: 768px) {
     display: none;
+  }
+`;
+
+const Login = styled.a`
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 16px;
+  letter-spacing: 1.5px;
+  border: 1px solid #f9f9f9;
+  border-radius: 4px;
+  transition: all 0.2s ease 0s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f9f9f9;
+    color: #000;
+    border-color: transparent;
   }
 `;
 
