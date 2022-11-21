@@ -65,9 +65,16 @@ function Header(props) {
           <span>SERIES</span>
         </a>
       </NavMenu>
-      <Login onClick={handleAuth} >
-        LOGIN
-      </Login>
+
+      {
+        !userName ?
+          <Login onClick={handleAuth} >
+            LOGIN
+          </Login>
+          :
+          <></>
+      }
+
     </Nav>
   )
 }
