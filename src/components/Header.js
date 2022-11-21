@@ -1,54 +1,53 @@
 import React from 'react'
 import styled from 'styled-components'
 import { auth, provider } from '../firebase'
+import { signInWithPopup } from "firebase/auth";
 
 function Header(props) {
   const handleAuth = () => {
-    auth.signInWithPopup(provider).then(
-      (result) => {
+    signInWithPopup(auth, provider)
+      .then((result) => {
         console.log(result);
-      }
-    ).catch(
-      (error) => {
+      })
+      .catch((error) => {
         alert(error.message);
-      }
-    );
+      });
   };
 
   return (
     <Nav>
-        <Logo>
-            <img src="/images/logo.svg" alt="Disney+" />
-        </Logo>
-        <NavMenu>
-          <a href="/home">
-            <img src="/images/home-icon.svg" alt="HomeIcon" style={{marginTop: "-2px"}} />
-            <span>HOME</span>
-          </a>
-          <a href="/home">
-            <img src="/images/search-icon.svg" alt="searchIcon" />
-            <span>SEARCH</span>
-          </a>
-          <a href="/home">
-            <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
-            <span>WATCHLIST</span>
-          </a>
-          <a href="/home">
-            <img src="/images/original-icon.svg" alt="originalsIcon" style={{marginTop: "-2px"}} />
-            <span>ORIGINALS</span>
-          </a>
-          <a href="/home">
-            <img src="/images/movie-icon.svg" alt="moviesIcon" />
-            <span>MOVIES</span>
-          </a>
-          <a href="/home">
-            <img src="/images/series-icon.svg" alt="seriesIcon" style={{marginTop: "-4px"}} />
-            <span>SERIES</span>
-          </a>
-        </NavMenu>
-        <Login>
-          LOGIN
-        </Login>
+      <Logo>
+        <img src="/images/logo.svg" alt="Disney+" />
+      </Logo>
+      <NavMenu>
+        <a href="/home">
+          <img src="/images/home-icon.svg" alt="HomeIcon" style={{ marginTop: "-2px" }} />
+          <span>HOME</span>
+        </a>
+        <a href="/home">
+          <img src="/images/search-icon.svg" alt="searchIcon" />
+          <span>SEARCH</span>
+        </a>
+        <a href="/home">
+          <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
+          <span>WATCHLIST</span>
+        </a>
+        <a href="/home">
+          <img src="/images/original-icon.svg" alt="originalsIcon" style={{ marginTop: "-2px" }} />
+          <span>ORIGINALS</span>
+        </a>
+        <a href="/home">
+          <img src="/images/movie-icon.svg" alt="moviesIcon" />
+          <span>MOVIES</span>
+        </a>
+        <a href="/home">
+          <img src="/images/series-icon.svg" alt="seriesIcon" style={{ marginTop: "-4px" }} />
+          <span>SERIES</span>
+        </a>
+      </NavMenu>
+      <Login onClick={handleAuth} >
+        LOGIN
+      </Login>
     </Nav>
   )
 }
