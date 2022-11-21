@@ -39,40 +39,48 @@ function Header(props) {
       <Logo>
         <img src="/images/logo.svg" alt="Disney+" />
       </Logo>
-      <NavMenu>
-        <a href="/home">
-          <img src="/images/home-icon.svg" alt="HomeIcon" style={{ marginTop: "-2px" }} />
-          <span>HOME</span>
-        </a>
-        <a href="/home">
-          <img src="/images/search-icon.svg" alt="searchIcon" />
-          <span>SEARCH</span>
-        </a>
-        <a href="/home">
-          <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
-          <span>WATCHLIST</span>
-        </a>
-        <a href="/home">
-          <img src="/images/original-icon.svg" alt="originalsIcon" style={{ marginTop: "-2px" }} />
-          <span>ORIGINALS</span>
-        </a>
-        <a href="/home">
-          <img src="/images/movie-icon.svg" alt="moviesIcon" />
-          <span>MOVIES</span>
-        </a>
-        <a href="/home">
-          <img src="/images/series-icon.svg" alt="seriesIcon" style={{ marginTop: "-4px" }} />
-          <span>SERIES</span>
-        </a>
-      </NavMenu>
 
       {
-        !userName ?
+        !userName ? (
+
           <Login onClick={handleAuth} >
             LOGIN
           </Login>
-          :
-          <></>
+
+        ) : (
+
+          <>
+            <NavMenu>
+              <a href="/home">
+                <img src="/images/home-icon.svg" alt="HomeIcon" style={{ marginTop: "-2px" }} />
+                <span>HOME</span>
+              </a>
+              <a href="/home">
+                <img src="/images/search-icon.svg" alt="searchIcon" />
+                <span>SEARCH</span>
+              </a>
+              <a href="/home">
+                <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
+                <span>WATCHLIST</span>
+              </a>
+              <a href="/home">
+                <img src="/images/original-icon.svg" alt="originalsIcon" style={{ marginTop: "-2px" }} />
+                <span>ORIGINALS</span>
+              </a>
+              <a href="/home">
+                <img src="/images/movie-icon.svg" alt="moviesIcon" />
+                <span>MOVIES</span>
+              </a>
+              <a href="/home">
+                <img src="/images/series-icon.svg" alt="seriesIcon" style={{ marginTop: "-4px" }} />
+                <span>SERIES</span>
+              </a>
+            </NavMenu>
+
+            <UserImage src={userPhoto} alt={userName} />
+          </>
+
+        )
       }
 
     </Nav>
@@ -185,6 +193,10 @@ const Login = styled.a`
     color: #000;
     border-color: transparent;
   }
+`;
+
+const UserImage = styled.img`
+  height: 100%;
 `;
 
 export default Header
