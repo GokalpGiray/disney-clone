@@ -55,23 +55,23 @@ function Header(props) {
                 <img src="/images/home-icon.svg" alt="HomeIcon" style={{ marginTop: "-2px" }} />
                 <span>HOME</span>
               </a>
-              <a href="/home">
+              <a href="/search">
                 <img src="/images/search-icon.svg" alt="searchIcon" />
                 <span>SEARCH</span>
               </a>
-              <a href="/home">
+              <a href="/watchlist">
                 <img src="/images/watchlist-icon.svg" alt="watchlistIcon" />
                 <span>WATCHLIST</span>
               </a>
-              <a href="/home">
+              <a href="/originals">
                 <img src="/images/original-icon.svg" alt="originalsIcon" style={{ marginTop: "-2px" }} />
                 <span>ORIGINALS</span>
               </a>
-              <a href="/home">
+              <a href="/movies">
                 <img src="/images/movie-icon.svg" alt="moviesIcon" />
                 <span>MOVIES</span>
               </a>
-              <a href="/home">
+              <a href="/series">
                 <img src="/images/series-icon.svg" alt="seriesIcon" style={{ marginTop: "-4px" }} />
                 <span>SERIES</span>
               </a>
@@ -93,7 +93,7 @@ const Nav = styled.nav`
   left: 0;
   right: 0;
   height: 70px;
-  background-color: #040714;
+  background-color: #090b13;
   display: flex;
   justify-content: space-between;
   align-items: center;
