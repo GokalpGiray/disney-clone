@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { auth, provider } from '../firebase'
 import { signInWithPopup } from "firebase/auth";
@@ -13,6 +13,15 @@ function Header(props) {
   const userName = useSelector(selectUserName);
   const userEmail = useSelector(selectUserEmail);
   const userPhoto = useSelector(selectUserPhoto);
+
+  useEffect(() => {
+    auth.onAuthStateChanged( async (user) => {
+      if(user) {
+        setUser(user);
+        navigate("/home");
+      }
+    })
+  },[userName]);
 
   const handleAuth = () => {
     signInWithPopup(auth, provider)
