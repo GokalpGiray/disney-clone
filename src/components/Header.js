@@ -41,7 +41,7 @@ function Header(props) {
       </Logo>
 
       {
-        !userName ? (
+        (!userName && !userPhoto) ? (
 
           <Login onClick={handleAuth} >
             LOGIN
