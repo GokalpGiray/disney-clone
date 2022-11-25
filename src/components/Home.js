@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 //components
 import ImageSlider from './ImageSlider';
+import Recommends from './Recommends';
 import Viewers from './Viewers';
 
 function Home() {
@@ -10,6 +11,7 @@ function Home() {
         <Container>
             <ImageSlider />
             <Viewers />
+            <Recommends />
         </Container>
     );
 };
