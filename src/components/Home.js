@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 //components
 import ImageSlider from './ImageSlider';
+import NewDisney from './NewDisney';
+import Originals from './Originals';
 import Recommends from './Recommends';
+import Trending from './Trending';
 import Viewers from './Viewers';
 
 function Home() {
@@ -12,6 +15,9 @@ function Home() {
             <ImageSlider />
             <Viewers />
             <Recommends />
+            <NewDisney />
+            <Originals />
+            <Trending />
         </Container>
     );
 };
