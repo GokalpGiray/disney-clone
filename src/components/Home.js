@@ -25,7 +25,6 @@ function Home() {
 
     useEffect(() => {
         const q = query(collection(db, "movies"));
-
         onSnapshot(q, (querySnapshot) => {
             querySnapshot.docs.map((doc) => {
 
