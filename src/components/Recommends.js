@@ -1,38 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { Container, Content, Wrap } from './componentStyle';
+import { useSelector } from 'react-redux';
+import { selectRecommend } from '../features/movie/movieSlice';
+import Movies, { Container } from './componentStyle';
 
 function Recommends() {
+    const movies = useSelector(selectRecommend);
+
     return (
         <Container>
             <h4>
                 Recommended For You
             </h4>
-            <Content>
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
+            <Movies movies={movies}/>
 
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-            </Content>
         </Container>
     )
 }

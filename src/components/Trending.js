@@ -1,38 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { Container, Content, Wrap } from './componentStyle';
+import { useSelector } from 'react-redux';
+import { selectTrending } from '../features/movie/movieSlice';
+import Movies, { Container } from './componentStyle';
 
 function Trending() {
+    const movies = useSelector(selectTrending);
+
     return (
         <Container>
             <h4>
                 Trending
             </h4>
-            <Content>
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-            </Content>
+            <Movies movies={movies}/>
         </Container>
     )
 }

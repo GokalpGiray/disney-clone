@@ -1,38 +1,17 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { Container, Content, Wrap } from './componentStyle';
+import { useSelector } from 'react-redux';
+import { selectNewDisney } from '../features/movie/movieSlice';
+import Movies, { Container } from './componentStyle';
 
 function NewDisney() {
+    const movies = useSelector(selectNewDisney);
+
     return (
         <Container>
             <h4>
                 New To Disney+
             </h4>
-            <Content>
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-
-                <Wrap>
-                    <Link to="/" >
-                        <img src="/images/viewers-disney.png" alt="" />
-                    </Link>
-                </Wrap>
-            </Content>
+            <Movies movies={movies}/>
         </Container>
     )
 }
