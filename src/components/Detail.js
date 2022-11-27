@@ -1,15 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import styled from 'styled-components'
+import db from "../firebase"
+import { onSnapshot, doc } from "firebase/firestore";
 
 function Detail() {
+    const { id } = useParams();
+    const [detailData, setDetailData] = useState({});
+
+    useEffect(() => {
+        const q = doc(db, "movies", id);
+
+        onSnapshot(q, (doc) => {
+            if (doc.exists) {
+                setDetailData(doc.data());
+            } else {
+                console.log("No Such Document in Firebase");
+            }
+        });
+    }, [id]);
+
     return (
         <Container>
             <Background>
-                <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/49B92C046117E89BC9243A68EE277A3B30D551D4599F23C10BF0B8C1E90AEFB6/scale?width=1440&aspectRatio=1.78&format=jpeg" alt="" />
+                <img src={detailData.backgroundImg} alt={detailData.title} />
             </Background>
 
             <ImageTitle>
-                <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/5C647DF3FFBFA343CFEA84AC715148F25F9E86F398B408010CC403E7654FB908/scale?width=1440&aspectRatio=1.78" alt="" />
+                <img src={detailData.titleImg} alt={detailData.title} />
             </ImageTitle>
 
             <ContentMeta>
@@ -33,10 +51,10 @@ function Detail() {
                     </GroupWatch>
                 </Controls>
                 <SubTitle>
-                    SubTitle
+                    {detailData.subTitle}
                 </SubTitle>
                 <Description>
-                    Description
+                    {detailData.description}
                 </Description>
             </ContentMeta>
         </Container>
