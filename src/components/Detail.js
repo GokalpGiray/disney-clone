@@ -26,6 +26,11 @@ function Detail() {
                         <span />
                         <span />
                     </AddList>
+                    <GroupWatch>
+                        <div>
+                            <img src="/images/group-icon.png" alt="" />
+                        </div>
+                    </GroupWatch>
                 </Controls>
             </ContentMeta>
         </Container>
@@ -166,13 +171,42 @@ const AddList = styled.div`
         span {
             &:first-child {
                 transform: translate(1px, 0px) rotate(90deg);
-                transition: all 1s;
+                transition: all 0.5s;
             }
 
             &:nth-child(2) {
                 transform: translateX(-8px) rotate(90deg);
-                transition: all 1s;
+                transition: all 0.5s;
             }
+        }
+    }
+`;
+
+const GroupWatch = styled.div`
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: white;
+
+    div {
+        height: 40px;
+        width: 40px;
+        background: rgb(0, 0, 0);
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &:hover {
+        div {
+            background-color: rgba(0, 0, 0, 0.6);
+            transition: background-color 0.2s;
         }
     }
 `;
