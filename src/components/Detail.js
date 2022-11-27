@@ -22,6 +22,10 @@ function Detail() {
                         <img src="/images/play-icon-white.png" alt="" />
                         <span>TRAILER</span>
                     </Trailer>
+                    <AddList>
+                        <span />
+                        <span />
+                    </AddList>
                 </Controls>
             </ContentMeta>
         </Container>
@@ -127,6 +131,50 @@ const Trailer = styled(Player)`
     border: 1px solid rgb(249, 249, 249);
     color: rgb(249, 249, 249);
 
+`;
+
+const AddList = styled.div`
+    margin-right: 16px;
+    height: 44px;
+    width: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+
+    span {
+        background-color: rgb(249, 249, 249);
+        display: inline-block;
+
+        &:first-child {
+            height: 2px;
+            transform: translate(1px, 0px) rotate(0deg);
+            width: 16px;
+        }
+
+        &:nth-child(2) {
+            height: 16px;
+            transform: translateX(-8px) rotate(0deg);
+            width: 2px;
+        }
+    }
+
+    &:hover {
+        span {
+            &:first-child {
+                transform: translate(1px, 0px) rotate(90deg);
+                transition: all 1s;
+            }
+
+            &:nth-child(2) {
+                transform: translateX(-8px) rotate(90deg);
+                transition: all 1s;
+            }
+        }
+    }
 `;
 
 export default Detail
